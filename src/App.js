@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Components/home';
 
 function App() {
+  const todo = [
+    { id: 1, name: 'learn DSA', completed: true, },
+    { id: 2, name: 'learn unit testing', completed: false, },
+    { id: 2, name: 'learn react', completed: true, },
+    { id: 2, name: 'learn driving', completed: false, },
+    { id: 3, name: 'learn cooking', completed: false },
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        todo.map((value) => {
+          return (
+            <Home todo={value} />
+          )
+        })
+      }
     </div>
+
   );
 }
 
